@@ -1,0 +1,10 @@
+export const KERI = 'keri'
+export const JEFF = 'jeff'
+export const SYDNEY = 'sydney'
+export const AUBREY = 'aubrey'
+export const DREW = 'drew'
+
+export const TEXT_QUESTION = 'text'
+export const AUDIO_QUESTION = 'audio'
+export const VIDEO_QUESTION = 'video'
+export const PHOTO_QUESTION = 'photo'
