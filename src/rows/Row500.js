@@ -7,7 +7,7 @@ function Row500({ cell_styles, openModal, setClickedCell }) {
             type: PHOTO_QUESTION,
             question: 'What decision was made this day?',
             answer: 'decided to buy the property',
-            content_url: '/static/mom - property.jpg',
+            content_url: `${process.env.PUBLIC_URL}/static/mom - property.jpg`,
             handleClick: () => {
                 setClickedCell(cells[0])
                 openModal()

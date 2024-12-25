@@ -7,7 +7,7 @@ function Row200({ cell_styles, openModal, setClickedCell }) {
             type: VIDEO_QUESTION,
             question: 'Give the context for the video clip:',
             answer: 'COVID',
-            content_url: '/static/mom - audio.mov',
+            content_url: `${process.env.PUBLIC_URL}/static/mom - audio.mov`,
             handleClick: () => {
                 setClickedCell(cells[0])
                 openModal()
@@ -17,7 +17,7 @@ function Row200({ cell_styles, openModal, setClickedCell }) {
             type: PHOTO_QUESTION,
             question: "Give the context for the picture:",
             answer: 'Iceland',
-            content_url: '/static/dad - darts.jpg',
+            content_url: `${process.env.PUBLIC_URL}/static/dad - darts.jpg`,
             handleClick: () => {
                 setClickedCell(cells[1])
                 openModal()
@@ -27,7 +27,7 @@ function Row200({ cell_styles, openModal, setClickedCell }) {
             type: PHOTO_QUESTION,
             question: "Give the context for the picture:",
             answer: 'Traverse City Insane Asylum',
-            content_url: '/static/sydney - insane.jpg',
+            content_url: `${process.env.PUBLIC_URL}/static/sydney - insane.jpg`,
             handleClick: () => {
                 setClickedCell(cells[2])
                 openModal()
