@@ -1,5 +1,5 @@
-export const KERI = 'keri'
-export const JEFF = 'jeff'
+export const KERI = 'mom'
+export const JEFF = 'dad'
 export const SYDNEY = 'sydney'
 export const AUBREY = 'aubrey'
 export const DREW = 'drew'
