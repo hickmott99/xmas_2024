@@ -16,10 +16,10 @@ function JeopardyBoard() {
     <div className="bg-blue-800 grid grid-cols-5 grid-rows-6">
       <HeaderRow/>
       <Row100 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
-      <Row200 cell_styles={cell_styles} />
-      <Row300 cell_styles={cell_styles} />
-      <Row400 cell_styles={cell_styles} />
-      <Row500 cell_styles={cell_styles} />
+      <Row200 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
+      <Row300 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
+      <Row400 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
+      <Row500 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} cell={clickedCell} />
     </div>
   );

@@ -33,7 +33,6 @@ function TextQuestionComponent({ question, answer }) {
 
 function AudioQuestionComponent({ question, content_url, answer }) {
     const [showAnswer, setShowAnswer] = useState(false);
-    console.log(content_url)
   
     return (
       <div>

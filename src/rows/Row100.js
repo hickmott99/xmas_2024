@@ -4,30 +4,27 @@ function Row100({ cell_styles, openModal, setClickedCell }) {
     const cells = [
         {
             user: KERI,
-            type: VIDEO_QUESTION,
-            question: 'what is 1',
-            answer: 'answererrrr 1',
-            content_url: '/static/mom - audio.mov',
+            type: TEXT_QUESTION,
+            question: 'What substance when spilled sends our mother to the edge?',
+            answer: 'Milk',
             handleClick: () => {
                 setClickedCell(cells[0])
                 openModal()
             }
         },{
             user: JEFF,
-            type: PHOTO_QUESTION,
-            question: 'WHERE IS THIS PHOTO FROM',
-            answer: 'VELKOMIN TO ICELAND',
-            content_url: '/static/dad - darts.jpg',
+            type: TEXT_QUESTION,
+            question: "What is Dad's signature dish to make the family?",
+            answer: 'Chili',
             handleClick: () => {
                 setClickedCell(cells[1])
                 openModal()
             }
         },{
             user: SYDNEY,
-            type: AUDIO_QUESTION,
-            question: 'what is 3',
-            answer: 'answererrrr 3',
-            content_url: 'https://www.youtube.com/embed/ZWejgj-e4tg',
+            type: TEXT_QUESTION,
+            question: "What was the food at Sydney's bachelorrete party?",
+            answer: 'Caesar Salad and Fries',
             handleClick: () => {
                 setClickedCell(cells[2])
                 openModal()
@@ -35,8 +32,8 @@ function Row100({ cell_styles, openModal, setClickedCell }) {
         },{
             user: AUBREY,
             type: TEXT_QUESTION,
-            question: 'what is 4',
-            answer: 'answererrrr 4',
+            question: 'How many minutes early did Aubrey order her Uber during the Chicago catastrophe?',
+            answer: '70 minutes (guess within 10 minutes)',
             handleClick: () => {
                 setClickedCell(cells[3])
                 openModal()
@@ -44,8 +41,8 @@ function Row100({ cell_styles, openModal, setClickedCell }) {
         },{
             user: DREW,
             type: TEXT_QUESTION,
-            question: 'what is 5',
-            answer: 'answererrrr 5',
+            question: "What song has the lyrics: “You're an idiot, now I'm sure. Now I'm positive, I should go and warn her”",
+            answer: "“That's so True” - Gracie Abrams",
             handleClick: () => {
                 setClickedCell(cells[4])
                 openModal()
