@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/xmas_2024/static/css/main.5e106534.css",
+    "main.js": "/xmas_2024/static/js/main.4ea696e4.js",
+    "index.html": "/xmas_2024/index.html",
+    "main.5e106534.css.map": "/xmas_2024/static/css/main.5e106534.css.map",
+    "main.4ea696e4.js.map": "/xmas_2024/static/js/main.4ea696e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e106534.css",
+    "static/js/main.4ea696e4.js"
+  ]
+}
