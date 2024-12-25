@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import HeaderRow from './rows/HeaderRow';
 import Row100 from './rows/Row100';
 import Row200 from './rows/Row200'
@@ -12,14 +12,39 @@ function JeopardyBoard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clickedCell, setClickedCell] = useState(null)
 
+  const [clickedCells, setClickedCells] = useState(() => {
+      const clickedCells = sessionStorage.getItem('clickedCells');
+      return clickedCells ? JSON.parse(clickedCells) : {
+        row100: [],
+        row200: [],
+        row300: [],
+        row400: [],
+        row500: []
+      };
+    });
+
+  const handleCellClick = (row, index) => {
+    setClickedCells((prev) => {
+      const updatedRow = [...prev[row]];
+      if (!updatedRow.includes(index)) {
+        updatedRow.push(index);
+      }
+      return { ...prev, [row]: updatedRow };
+    });
+  };
+
+  useEffect(() => {
+    sessionStorage.setItem('clickedCells', JSON.stringify(clickedCells));
+  }, [clickedCells]);
+
   return (
     <div className="bg-blue-800 grid grid-cols-5 grid-rows-6">
       <HeaderRow/>
-      <Row100 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
-      <Row200 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
-      <Row300 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
-      <Row400 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
-      <Row500 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} />
+      <Row100 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} handleCellClick={handleCellClick} clickedCells={clickedCells.row100} />
+      <Row200 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} handleCellClick={handleCellClick} clickedCells={clickedCells.row200} />
+      <Row300 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} handleCellClick={handleCellClick} clickedCells={clickedCells.row300} />
+      <Row400 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} handleCellClick={handleCellClick} clickedCells={clickedCells.row400} />
+      <Row500 cell_styles={cell_styles} openModal={() => setIsModalOpen(true)} setClickedCell={setClickedCell} handleCellClick={handleCellClick} clickedCells={clickedCells.row500} />
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} cell={clickedCell} />
     </div>
   );

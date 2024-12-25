@@ -1,6 +1,6 @@
 import { AUBREY, AUDIO_QUESTION, DREW, JEFF, KERI, PHOTO_QUESTION, SYDNEY, TEXT_QUESTION, VIDEO_QUESTION } from "../Constants";
 
-function Row500({ cell_styles, openModal, setClickedCell }) {
+function Row500({ cell_styles, openModal, setClickedCell, handleCellClick, clickedCells }) {
     const cells = [
         {
             user: KERI,
@@ -55,11 +55,26 @@ function Row500({ cell_styles, openModal, setClickedCell }) {
     ]
   
     return (
-      <>
-        {cells.map((cell, index) => (
-          <div key={index} className={cell_styles} onClick={cell.handleClick}>500</div>
-        ))}
-      </>
+        <>
+          {cells.map((cell, index) => {
+            const isClicked = clickedCells.includes(index);
+            const bgColor = isClicked ? 'bg-blue-950 !text-gray-500' : 'bg-transparent';
+    
+            return (
+              <div
+                key={index}
+                className={`${cell_styles} ${bgColor}`}
+                onClick={() => {
+                  setClickedCell(cell);
+                  handleCellClick('row500', index);
+                  openModal();
+                }}
+              >
+                500
+              </div>
+            );
+          })}
+        </>
     );
   }
   

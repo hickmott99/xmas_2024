@@ -32,13 +32,8 @@ const ScoringSection = () => {
   };
 
   const handleReset = () => {
-    setScores({
-        [AUBREY]: 0,
-        [DREW]: 0,
-        [JEFF]: 0,
-        [KERI]: 0,
-        [SYDNEY]: 0,
-    });
+    sessionStorage.clear();
+    window.location.reload();
   }
 
   return (<>
