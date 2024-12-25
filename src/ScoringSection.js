@@ -42,7 +42,7 @@ const ScoringSection = () => {
   }
 
   return (<>
-      <div className="py-4 flex items-end justify-center space-x-4">
+      <div className="py-4 flex items-end justify-center space-x-4 text-[20px]">
         <div>
           <select
             id="name"
@@ -60,7 +60,7 @@ const ScoringSection = () => {
         </div>
         
         <div className='flex flex-col justify-center'>
-            <label className="h-[18px]">
+            <label className="h-[20px]">
                 <input
                 type="radio"
                 name="sign"
@@ -70,7 +70,7 @@ const ScoringSection = () => {
                 />
                 <span className="text-white ps-[3px]">+</span>
             </label>
-            <label className="h-[18px]">
+            <label className="h-[20px]">
                 <input
                 type="radio"
                 name="sign"
@@ -122,7 +122,7 @@ const ScoringSection = () => {
                     .sort((a, b) => scores[b] - scores[a])
                     .map((player) => (
                         <li key={player} className="text-white">
-                        {player.slice(0, 1).toUpperCase() + player.slice(1)}: {scores[player]}
+                        <span className='font-bold'>{player.slice(0, 1).toUpperCase() + player.slice(1)}</span>: {scores[player]}
                         </li>
                 ))}
             </ul>
