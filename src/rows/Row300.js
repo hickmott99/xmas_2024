@@ -34,7 +34,7 @@ function Row300({ cell_styles, openModal, setClickedCell }) {
             type: PHOTO_QUESTION,
             question: 'What happened this day?',
             answer: 'drivers license acquired',
-            content_url: '/static/aubrey - license.jpg',
+            content_url: `${process.env.PUBLIC_URL}/static/aubrey - license.jpg`,
             handleClick: () => {
                 setClickedCell(cells[3])
                 openModal()

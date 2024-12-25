@@ -1,5 +1,5 @@
 function HeaderRow() {
-    const cell_styles = "border border-black text-white font-bold text-center p-2"
+    const cell_styles = "border border-black text-white font-bold text-center p-3"
     return (
         <>
             <div className={cell_styles}>Mom</div>
